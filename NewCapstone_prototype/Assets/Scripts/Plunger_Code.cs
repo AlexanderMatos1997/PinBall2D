@@ -29,7 +29,7 @@ public class Plunger_Code : MonoBehaviour
         {
             powerSlider.gameObject.SetActive(true);
 
-            //BallLaunch();
+            BallLaunch();
         }
         else
         {
@@ -39,6 +39,22 @@ public class Plunger_Code : MonoBehaviour
 
         powerSlider.value = power;
 
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    if (power <= maxPower)
+        //    {
+        //        power += 45 * Time.deltaTime;
+        //    }
+        //}
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
+        //    ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.up);
+        //    gameController.inPlay = true;
+        //}
+    }
+    void BallLaunch()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
             if (power <= maxPower)
@@ -53,20 +69,4 @@ public class Plunger_Code : MonoBehaviour
             gameController.inPlay = true;
         }
     }
-    //void BallLaunch()
-    //{
-    //    if (Input.GetKey(KeyCode.Space))
-    //    {
-    //        if (power <= maxPower)
-    //        {
-    //            power += 45 * Time.deltaTime;
-    //        }
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
-    //        ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.up);
-    //        gameController.inPlay = true;
-    //    }
-    //}
 }
