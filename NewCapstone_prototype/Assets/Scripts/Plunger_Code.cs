@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class Plunger_Code : MonoBehaviour
 {
     float power;
+    [SerializeField]
+    private float flipperPower;
     public float minPower = 0f;
     public float maxPower;
+    public float shootValue;
+
     public Slider powerSlider;
     public GameObject ballPrefab;
     public GameObject ballLaunch;
@@ -38,20 +42,7 @@ public class Plunger_Code : MonoBehaviour
         }
 
         powerSlider.value = power;
-
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    if (power <= maxPower)
-        //    {
-        //        power += 45 * Time.deltaTime;
-        //    }
-        //}
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
-        //    ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.up);
-        //    gameController.inPlay = true;
-        //}
+        print("Slider Val: " + power);
     }
     void BallLaunch()
     {
@@ -59,13 +50,13 @@ public class Plunger_Code : MonoBehaviour
         {
             if (power <= maxPower)
             {
-                power += 45 * Time.deltaTime;
+                power += shootValue * Time.deltaTime;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
-            ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.up);
+            ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.right);
             gameController.inPlay = true;
         }
     }
