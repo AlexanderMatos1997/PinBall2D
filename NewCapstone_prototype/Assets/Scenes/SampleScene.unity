@@ -448,6 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumperForce: 1
+  bumperHealth: 2
+  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!58 &135468449
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1365,6 +1367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumperForce: 1
+  bumperHealth: 2
+  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!58 &1058743941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2291,6 +2295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumperForce: 1
+  bumperHealth: 2
+  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1865175700
 GameObject:
   m_ObjectHideFlags: 0

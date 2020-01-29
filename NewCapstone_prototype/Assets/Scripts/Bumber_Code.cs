@@ -6,6 +6,8 @@ public class Bumber_Code : MonoBehaviour
 {
     //public int points;
     public float bumperForce;
+    public int bumperHealth;
+    public Sprite bumpSprite;
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,7 +21,18 @@ public class Bumber_Code : MonoBehaviour
              */
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumperForce));
             Debug.Log("Ball is reflected");
-            //ballRB.ve
+
+            if (bumperHealth > 1)
+            {
+                bumperHealth--;
+                GetComponent<SpriteRenderer>().sprite = bumpSprite;
+                Debug.Log("bumper sprite change");
+            }
+            else
+            {
+                Destroy(gameObject);
+                Debug.Log("bumper is destroy");
+            }
         }
     }
 }
