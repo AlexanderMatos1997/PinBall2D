@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Bumber_Code : MonoBehaviour
 {
+    [SerializeField]
+    public ParentBumber_function parent;
     //public int points;
     public float bumperForce;
     public int bumperHealth;
     public Sprite bumpSprite;
-    
+
+    public void Awake()
+    {
+        parent = GetComponentInParent<ParentBumber_function>();
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -21,7 +29,6 @@ public class Bumber_Code : MonoBehaviour
              */
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumperForce));
             Debug.Log("Ball is reflected");
-
             if (bumperHealth > 1)
             {
                 bumperHealth--;
@@ -30,6 +37,7 @@ public class Bumber_Code : MonoBehaviour
             }
             else
             {
+                parent.parentCounter--;
                 Destroy(gameObject);
                 Debug.Log("bumper is destroy");
             }
