@@ -6,6 +6,8 @@ public class Bumber_Code : MonoBehaviour
 {
     [SerializeField]
     public ParentBumber_function parent;
+    Animator animator;
+
     //public int points;
     public float bumperForce;
     public int bumperHealth;
@@ -14,6 +16,7 @@ public class Bumber_Code : MonoBehaviour
     public void Awake()
     {
         parent = GetComponentInParent<ParentBumber_function>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -28,15 +31,40 @@ public class Bumber_Code : MonoBehaviour
                the ball object to the other direction. bumperForce basically adds to the velocity of the ball.
              */
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumperForce));
-            Debug.Log("Ball is reflected");
-            if (bumperHealth > 1)
+            bumperHealth--;
+
+            //Debug.Log("Ball is reflected");
+            if (bumperHealth > 0)
             {
-                bumperHealth--;
-                GetComponent<SpriteRenderer>().sprite = bumpSprite;
-                Debug.Log("bumper sprite change");
+                //bumperHealth--;
+                //GetComponent<SpriteRenderer>().sprite = bumpSprite;
+                //Debug.Log("bumper sprite change");
+                if(bumperHealth == 3)
+                {
+                    animator.SetBool("Full_Health state 1", true);
+
+                    Debug.Log("Full_Health state 1 is true");
+                }
+                else if(bumperHealth == 2)
+                {
+                    animator.SetBool("Half-Damage state 0", true);
+                    animator.SetBool("Full_Health state 1", false);
+                    //animator.SetBool("Full_Health state 1", false);
+                    Debug.Log("Half-Damage state 0 is true");
+                }
+                else if (bumperHealth == 1)
+                {
+                    animator.SetBool("OneFourth-Damage state", true);
+                    animator.SetBool("Half-Damage state 0", false);
+                    //animator.SetBool("Half-Damage state 0", false);
+                }
+
             }
             else
             {
+                animator.SetBool("Destroy bumper", true);
+                animator.SetBool("OneFourth-Damage state", false);
+                //animator.SetBool("OneFourth-Damage state", false);
                 parent.parentCounter--;
                 Destroy(gameObject);
                 Debug.Log("bumper is destroy");

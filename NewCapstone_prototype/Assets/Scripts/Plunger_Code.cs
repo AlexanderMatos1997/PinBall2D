@@ -42,7 +42,7 @@ public class Plunger_Code : MonoBehaviour
         }
 
         powerSlider.value = power;
-        print("Slider Val: " + power);
+        //print("Slider Val: " + power);
     }
     void BallLaunch()
     {

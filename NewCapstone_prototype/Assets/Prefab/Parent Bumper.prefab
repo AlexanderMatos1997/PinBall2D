@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1490422388656691365}
   - component: {fileID: 1490422388656691366}
   - component: {fileID: 1490422388656691367}
+  - component: {fileID: 7963237180030551815}
   m_Layer: 0
   m_Name: Bumber (2)
   m_TagString: Bumper
@@ -112,8 +113,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   bumperForce: 1
-  bumperHealth: 2
+  bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!95 &7963237180030551815
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422388656691352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71af88bcc9c008846b961fcceb9a0633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1490422389008493444
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +146,7 @@ GameObject:
   - component: {fileID: 1490422389008493441}
   - component: {fileID: 1490422389008493442}
   - component: {fileID: 1490422389008493443}
+  - component: {fileID: 6186359921878535750}
   m_Layer: 0
   m_Name: Bumber (1)
   m_TagString: Bumper
@@ -226,8 +247,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   bumperForce: 1
-  bumperHealth: 2
+  bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!95 &6186359921878535750
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422389008493444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71af88bcc9c008846b961fcceb9a0633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1490422389548714534
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +280,7 @@ GameObject:
   - component: {fileID: 1490422389548714532}
   - component: {fileID: 1490422389548714533}
   - component: {fileID: 1490422389548714530}
+  - component: {fileID: 4953797980710745993}
   m_Layer: 0
   m_Name: Bumber
   m_TagString: Bumper
@@ -340,8 +381,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   bumperForce: 1
-  bumperHealth: 2
+  bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!95 &4953797980710745993
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422389548714534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71af88bcc9c008846b961fcceb9a0633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1490422390213384216
 GameObject:
   m_ObjectHideFlags: 0
