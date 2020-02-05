@@ -37,6 +37,7 @@ public class ParentBumber_function : MonoBehaviour
         if(parentCounter == 0)
         {
             Destroy(gameObject);
+            gameController.pbInScene = false;
         }  
     }
 }
