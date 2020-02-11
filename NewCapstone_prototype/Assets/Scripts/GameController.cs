@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+
+    public GameObject[] bumperRandomizer;
+    int randomInteger;
+
     public GameObject ballPrefab;
     public GameObject ballSA;
     public GameObject parentBumberOb;
 
-    public GameObject bumberSP;
+    public GameObject bumperSP;
 
     public bool inPlay;
 
@@ -26,7 +30,8 @@ public class GameController : MonoBehaviour
     {
         if (!pbInScene)
         {
-            SpawnBumberPrefab();
+            //SpawnBumberPrefab();
+            BumperRandom();
         }
     }
     void SpawnBall()
@@ -37,7 +42,14 @@ public class GameController : MonoBehaviour
 
     void SpawnBumberPrefab()
     {
-        Instantiate(parentBumberOb, bumberSP.transform.position, bumberSP.transform.rotation);
+        Instantiate(parentBumberOb, bumperSP.transform.position, bumperSP.transform.rotation);
+        pbInScene = true;
+    }
+
+    void BumperRandom()
+    {
+        randomInteger = Random.Range(0, bumperRandomizer.Length);
+        Instantiate(bumperRandomizer[randomInteger], bumperSP.transform.position, bumperSP.transform.rotation);
         pbInScene = true;
     }
 }

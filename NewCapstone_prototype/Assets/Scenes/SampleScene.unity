@@ -875,7 +875,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -Infinity, y: -5.9029578e+20, z: 3e-45, w: 9e-44}
+  m_BoundingSphereOverride: {x: 1.5046335e-36, y: -2.1474836e+9, z: 3e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1970,12 +1970,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec60dcc6d7db704fa410b4e4533ec30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bumperRandomizer:
+  - {fileID: 1490422390213384216, guid: 1599a52b593c5a948b3dc2c927703db6, type: 3}
+  - {fileID: 2524077617262217201, guid: 076a9535a6295734e8ae8e0ca96cb087, type: 3}
+  - {fileID: 1587623009018916056, guid: dae61acbc3fb50f45a459ef97da4061e, type: 3}
+  - {fileID: 1248699752428005752, guid: 27769cf0973db674e88b295b8bee3134, type: 3}
   ballPrefab: {fileID: 581621579102214800, guid: f56351fda309c074eb6a2e7b97ade308,
     type: 3}
   ballSA: {fileID: 627028177}
   parentBumberOb: {fileID: 1490422390213384216, guid: 1599a52b593c5a948b3dc2c927703db6,
     type: 3}
-  bumberSP: {fileID: 455388723}
+  bumperSP: {fileID: 455388723}
   inPlay: 0
   pbInScene: 0
 --- !u!4 &1586093865
