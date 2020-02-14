@@ -17,17 +17,40 @@ public class GetterActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < a.Length; i++)
-        {
-            print(a[i].GetComponent<LightUpScore>().isActive);
-            if (!a[i].GetComponent<LightUpScore>().isActive)
-            {
-                allTrue = true;
-            }
-            else
-            {
+        //for (int i = 0; i < a.Length; i++)
+        //{
+        //    print(a[i].GetComponent<LightUpScore>().IsActive);
+        //    if (!a[i].GetComponent<LightUpScore>().IsActive)
+        //    {
+        //        //Debug.Log("Score is currently disabled");
+        //        //allTrue = true;
+        //    }
+        //    else
+        //    {
+        //        
+        //        //a[i].GetComponent<LightUpScore>().isActive = false
+        //        Debug.Log("Score is currently active");
+        //    }
+        //}
+        bool areallActive = true;
 
+        foreach(GameObject go in a)
+        {
+            if (go.GetComponent<LightUpScore>().IsActive == false){
+                areallActive = false;
+                Debug.Log("areallActive is set to false");
+                break;
             }
+        }
+        if (areallActive)
+        {
+            foreach(GameObject go in a)
+            {
+                go.GetComponent<LightUpScore>().IsActive = false;
+                
+            }
+
+            Debug.Log("areallActive is set to true");
         }
     }
 }

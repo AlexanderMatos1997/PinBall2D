@@ -43,14 +43,14 @@ public class Bumber_Code : MonoBehaviour
                 {
                     animator.SetBool("Full_Health state 1", true);
 
-                    Debug.Log("Full_Health state 1 is true");
+                    //Debug.Log("Full_Health state 1 is true");
                 }
                 else if(bumperHealth == 2)
                 {
                     animator.SetBool("Half-Damage state 0", true);
                     animator.SetBool("Full_Health state 1", false);
                     //animator.SetBool("Full_Health state 1", false);
-                    Debug.Log("Half-Damage state 0 is true");
+                    //Debug.Log("Half-Damage state 0 is true");
                 }
                 else if (bumperHealth == 1)
                 {
@@ -67,7 +67,7 @@ public class Bumber_Code : MonoBehaviour
                 //animator.SetBool("OneFourth-Damage state", false);
                 parent.parentCounter--;
                 Destroy(gameObject);
-                Debug.Log("bumper is destroy");
+                //Debug.Log("bumper is destroy");
             }
         }
     }

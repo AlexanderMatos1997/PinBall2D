@@ -32,7 +32,7 @@ public class ParentBumber_function : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("objects in list is " + bumbers.Count);
+        //Debug.Log("objects in list is " + bumbers.Count);
 
         if(parentCounter == 0)
         {

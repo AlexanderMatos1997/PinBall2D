@@ -6,11 +6,22 @@ public class LightUpScore : MonoBehaviour
 {
     [SerializeField] private bool isActivated;
 
-    public bool isActive
+    public bool IsActive
     {
         get
         {
             return isActivated;
+        }
+        set { if (value) {
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(15f, 64f, 113f);
+                //Debug.Log("Ball is detected");
+                isActivated = true;
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 128f, 255f);
+                isActivated = false;
+            }
         }
     }
 
@@ -20,25 +31,23 @@ public class LightUpScore : MonoBehaviour
         
     }
     
-
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            if (!isActive)
+            if (!IsActive)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(15f, 64f, 113f);
-                Debug.Log("Ball is detected");
-                isActivated = true;
+                //gameObject.GetComponent<SpriteRenderer>().color = new Color(15f, 64f, 113f);
+                ////Debug.Log("Ball is detected");
+                //isActivated = true;
+                IsActive = true;
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 128f, 255f);
-                isActivated = false;
+                //gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 128f, 255f);
+                //isActivated = false;
+                IsActive = false;
             }
-
-            
         }
     }
 

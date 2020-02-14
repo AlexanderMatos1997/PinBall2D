@@ -30,13 +30,13 @@ public class Flipper_Code : MonoBehaviour
         {
             hingeJM.motorSpeed = ActivePosition * 5;
             hingeJoint.motor = hingeJM;
-            Debug.Log("input is detected");
+            //Debug.Log("input is detected");
         }
         else
         {
             hingeJM.motorSpeed = RestPosition * 5;
             hingeJoint.motor = hingeJM;
-            Debug.Log("else is active");
+            //Debug.Log("else is active");
         }
 
     }
