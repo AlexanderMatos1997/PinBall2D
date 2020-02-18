@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class ParentBumber_function : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> bumbers = new List<GameObject>();
+    [SerializeField] public List<GameObject> bumpers = new List<GameObject>();
 
     public GameController gameController;
 
     public int parentCounter;
 
-    public List<GameObject> myList
-    {
-        get
-        {
-            return bumbers;
-        }
-        set
-        {
-
-        }
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +17,18 @@ public class ParentBumber_function : MonoBehaviour
         //BumberList();
 
     }
+
+    //private void Awake()
+    //{
+    //    if (bumpers == null)
+    //    {
+    //        bumpers = new List<GameObject>();
+    //        foreach (GameObject BB in GameObject.FindGameObjectsWithTag("Bumper"))
+    //        {
+    //            bumpers.Add(BB);
+    //        }
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()

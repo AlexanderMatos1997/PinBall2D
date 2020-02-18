@@ -6,32 +6,18 @@ public class GetterActive : MonoBehaviour
 {
     GameObject[] a;
 
-    bool allTrue = true;
+    GameController gc;
 
     // Start is called before the first frame update
     void Start()
     {
         a = GameObject.FindGameObjectsWithTag("ScoreLight");
+        //gc = GameObject.FindGameObjectWithTag("")
     }
 
     // Update is called once per frame
     void Update()
     {
-        //for (int i = 0; i < a.Length; i++)
-        //{
-        //    print(a[i].GetComponent<LightUpScore>().IsActive);
-        //    if (!a[i].GetComponent<LightUpScore>().IsActive)
-        //    {
-        //        //Debug.Log("Score is currently disabled");
-        //        //allTrue = true;
-        //    }
-        //    else
-        //    {
-        //        
-        //        //a[i].GetComponent<LightUpScore>().isActive = false
-        //        Debug.Log("Score is currently active");
-        //    }
-        //}
         bool areallActive = true;
 
         foreach(GameObject go in a)

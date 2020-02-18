@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
 
     public GameObject[] bumperRandomizer;
     int randomInteger;
+
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Text livesText;
+    [SerializeField] private int score;
+    [SerializeField] private int lives;
 
     public GameObject ballPrefab;
     public GameObject ballSA;
@@ -23,6 +29,9 @@ public class GameController : MonoBehaviour
     {
         inPlay = false;
         pbInScene = false;
+
+        scoreText.text = "Score: " + score;
+        livesText.text = "Lives are here";
     }
 
     // Update is called once per frame
@@ -34,6 +43,18 @@ public class GameController : MonoBehaviour
             BumperRandom();
         }
     }
+
+    public void UpdateScore(int points)
+    {
+        score += points;
+        scoreText.text = "Score: " + score;
+    }
+
+    public void UpdateLives(int changeInLives)
+    {
+        lives += changeInLives;
+    }
+
     void SpawnBall()
     {
         Instantiate(ballPrefab, ballSA.transform.position, ballSA.transform.rotation);
