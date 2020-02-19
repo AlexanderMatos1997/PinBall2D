@@ -24,6 +24,7 @@ public class Ball_Code : MonoBehaviour
         {
             gc.inPlay = false;
             Destroy(gameObject);
+            gc.UpdateLives(1);
         }
     }
 }

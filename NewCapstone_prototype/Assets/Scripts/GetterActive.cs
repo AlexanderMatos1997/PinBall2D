@@ -33,7 +33,6 @@ public class GetterActive : MonoBehaviour
             foreach(GameObject go in a)
             {
                 go.GetComponent<LightUpScore>().IsActive = false;
-                
             }
 
             Debug.Log("areallActive is set to true");
