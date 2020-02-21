@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject ballSA;
     public GameObject parentBumberOb;
+    public GameObject MultiBallSP;
 
     public GameObject bumperSP;
 
@@ -76,6 +77,18 @@ public class GameController : MonoBehaviour
     {
         Instantiate(parentBumberOb, bumperSP.transform.position, bumperSP.transform.rotation);
         pbInScene = true;
+    }
+
+    public void ActivateMultiBall()
+    {
+        StartCoroutine(MultiBallSpawn());
+    }
+
+    IEnumerator MultiBallSpawn()
+    {
+        Instantiate(ballPrefab, MultiBallSP.transform.position, MultiBallSP.transform.rotation);
+        yield return new WaitForSeconds(2);
+        Instantiate(ballPrefab, MultiBallSP.transform.position, MultiBallSP.transform.rotation);
     }
 
     void BumperRandom()

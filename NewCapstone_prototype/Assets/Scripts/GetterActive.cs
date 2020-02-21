@@ -12,6 +12,7 @@ public class GetterActive : MonoBehaviour
     void Start()
     {
         a = GameObject.FindGameObjectsWithTag("ScoreLight");
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //gc = GameObject.FindGameObjectWithTag("")
     }
 
@@ -30,11 +31,12 @@ public class GetterActive : MonoBehaviour
         }
         if (areallActive)
         {
-            foreach(GameObject go in a)
+            gc.ActivateMultiBall();
+
+            foreach (GameObject go in a)
             {
                 go.GetComponent<LightUpScore>().IsActive = false;
             }
-
             Debug.Log("areallActive is set to true");
         }
     }
