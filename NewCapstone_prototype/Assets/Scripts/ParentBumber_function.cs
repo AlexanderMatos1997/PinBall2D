@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParentBumber_function : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> bumpers = new List<GameObject>();
+    [SerializeField] public List<GameObject> bumpers;
 
     public GameController gameController;
 
@@ -13,9 +13,20 @@ public class ParentBumber_function : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("GameController is found");
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //BumberList();
-
+        if (bumpers == null || bumpers.Count == 0)
+        {
+            bumpers = new List<GameObject>();
+            Debug.Log("bumpers has a new list");
+            foreach (GameObject BB in GameObject.FindGameObjectsWithTag("Bumper"))
+            {
+                bumpers.Add(BB);
+                //gameController.pbInScene = true;
+                Debug.Log("Bumpers are added to the list");
+            }
+        }
     }
 
     //private void Awake()
@@ -35,10 +46,10 @@ public class ParentBumber_function : MonoBehaviour
     {
         //Debug.Log("objects in list is " + bumbers.Count);
 
-        if(parentCounter == 0)
+        if(bumpers.Count == 0)
         {
             Destroy(gameObject);
             gameController.pbInScene = false;
-        }  
+        } 
     }
 }
