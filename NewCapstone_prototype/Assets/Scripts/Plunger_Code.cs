@@ -46,18 +46,21 @@ public class Plunger_Code : MonoBehaviour
     }
     void BallLaunch()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (!gameController.gameOverBool)
         {
-            if (power <= maxPower)
+            if (Input.GetKey(KeyCode.Space))
             {
-                power += shootValue * Time.deltaTime;
+                if (power <= maxPower)
+                {
+                    power += shootValue * Time.deltaTime;
+                }
             }
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
-            ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.left);
-            gameController.inPlay = true;
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
+                ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.left);
+                gameController.inPlay = true;
+            }
         }
     }
 }

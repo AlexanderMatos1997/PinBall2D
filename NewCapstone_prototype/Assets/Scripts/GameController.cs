@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     public GameObject bumperSP;
 
     public bool inPlay;
-    //public bool gameOverBool;
+    public bool gameOverBool;
     public bool pbInScene;
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
     {
         inPlay = false;
         pbInScene = false;
-        //gameOverBool = false;
+        gameOverBool = false;
 
         gameOverPanel.SetActive(false);
 
@@ -111,6 +111,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+        gameOverBool = true;
     }
 
     public void Restart()
