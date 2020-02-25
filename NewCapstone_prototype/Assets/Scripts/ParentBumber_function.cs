@@ -46,7 +46,7 @@ public class ParentBumber_function : MonoBehaviour
     {
         //Debug.Log("objects in list is " + bumbers.Count);
 
-        if(bumpers.Count == 0)
+        if(bumpers.Count == 0 /*&& bumpers ==null*/)
         {
             Destroy(gameObject);
             gameController.pbInScene = false;

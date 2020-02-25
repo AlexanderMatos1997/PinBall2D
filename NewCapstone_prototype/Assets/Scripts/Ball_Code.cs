@@ -12,19 +12,27 @@ public class Ball_Code : MonoBehaviour
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("KillBox"))
         {
-            gc.inPlay = false;
-            Destroy(gameObject);
-            gc.UpdateLives(1);
+            foreach(GameObject PBs in gc.Pinballs)
+            {
+                if (PBs == gameObject)
+                {
+                    gc.Pinballs.Remove(gameObject);
+                    Destroy(gameObject);
+                    Debug.Log("Pinball removed from List");
+                    break;
+                }
+            }
+            if(gc.Pinballs.Count == 0)
+            {
+                gc.inPlay = false;
+                Debug.Log("All pinballs are gone");
+                gc.UpdateLives(1);
+                Debug.Log("New round has started");
+            }
         }
     }
 }

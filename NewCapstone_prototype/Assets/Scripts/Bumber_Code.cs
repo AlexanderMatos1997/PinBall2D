@@ -62,7 +62,7 @@ public class Bumber_Code : MonoBehaviour
                 animator.SetBool("Destroy bumper", true);
                 animator.SetBool("OneFourth-Damage state", false);
                 //animator.SetBool("OneFourth-Damage state", false);
-                parent.parentCounter--;
+                parent.bumpers.Remove(gameObject);
                 Destroy(gameObject);
                 //Debug.Log("bumper is destroy");
             }

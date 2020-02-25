@@ -25,7 +25,7 @@ public class GetterActive : MonoBehaviour
         {
             if (go.GetComponent<LightUpScore>().IsActive == false){
                 areallActive = false;
-                Debug.Log("areallActive is set to false");
+                //Debug.Log("areallActive is set to false");
                 break;
             }
         }
@@ -37,7 +37,7 @@ public class GetterActive : MonoBehaviour
             {
                 go.GetComponent<LightUpScore>().IsActive = false;
             }
-            Debug.Log("areallActive is set to true");
+            //Debug.Log("areallActive is set to true");
         }
     }
 }

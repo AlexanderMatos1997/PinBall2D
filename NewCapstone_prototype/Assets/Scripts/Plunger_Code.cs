@@ -56,7 +56,7 @@ public class Plunger_Code : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
-            ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.right);
+            ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.left);
             gameController.inPlay = true;
         }
     }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public List<GameObject> Pinballs;
 
     public GameObject[] bumperRandomizer;
     int randomInteger;
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
     public GameObject bumperSP;
 
     public bool inPlay;
-
+    //public bool gameOverBool;
     public bool pbInScene;
 
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour
     {
         inPlay = false;
         pbInScene = false;
+        //gameOverBool = false;
 
         gameOverPanel.SetActive(false);
 
@@ -48,6 +50,14 @@ public class GameController : MonoBehaviour
             //SpawnBumberPrefab();
             BumperRandom();
         }
+
+        Pinballs = new List<GameObject>();
+        Debug.Log("Pinballs list created");
+        foreach(GameObject PBs in GameObject.FindGameObjectsWithTag("Ball"))
+        {
+            Pinballs.Add(PBs);
+            Debug.Log("Ball object added to Pinballs list");
+        }
     }
 
     public void UpdateScore(int points)
@@ -60,7 +70,7 @@ public class GameController : MonoBehaviour
     {
         lives -= lifeLost;
 
-        if(lives <= 0)
+        if(lives == 0)
         {
             GameOver();
         }
