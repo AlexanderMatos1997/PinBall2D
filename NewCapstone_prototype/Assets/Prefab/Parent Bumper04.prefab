@@ -46,10 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c099f9988b0726647a8641b28f1bfa83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumbers:
-  - {fileID: 1248699753075899206}
-  - {fileID: 1248699753613499108}
-  - {fileID: 1248699753832131064}
+  bumpers: []
   gameController: {fileID: 0}
   parentCounter: 3
 --- !u!1 &1248699753075899206
@@ -164,9 +161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  bumperForce: 1
+  bumperForce: 2
   bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  pointsAdded: 0
 --- !u!95 &4702923008408045289
 Animator:
   serializedVersion: 3
@@ -298,9 +296,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  bumperForce: 1
+  bumperForce: 2
   bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  pointsAdded: 0
 --- !u!95 &5773917195481087782
 Animator:
   serializedVersion: 3
@@ -432,9 +431,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  bumperForce: 1
+  bumperForce: 2
   bumperHealth: 3
   bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  pointsAdded: 0
 --- !u!95 &7744032525080884839
 Animator:
   serializedVersion: 3
