@@ -22,16 +22,16 @@ public class Ball_Code : MonoBehaviour
                 {
                     gc.Pinballs.Remove(gameObject);
                     Destroy(gameObject);
-                    Debug.Log("Pinball removed from List");
+                    //Debug.Log("Pinball removed from List");
                     break;
                 }
             }
             if(gc.Pinballs.Count == 0)
             {
                 gc.inPlay = false;
-                Debug.Log("All pinballs are gone");
+                //Debug.Log("All pinballs are gone");
                 gc.UpdateLives(1);
-                Debug.Log("New round has started");
+                //Debug.Log("New round has started");
             }
         }
     }

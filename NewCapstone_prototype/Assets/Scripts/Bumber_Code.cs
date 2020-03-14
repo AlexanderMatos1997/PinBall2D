@@ -10,17 +10,29 @@ public class Bumber_Code : MonoBehaviour
     GameController gc;
 
     //public int points;
-    public float bumperForce;
-    public int bumperHealth;
-    public Sprite bumpSprite;
+    private float bumberForce = 1.5f;
+    private byte bumberHealth = 3;
+    //public Sprite bumpSprite;
+    private SpriteRenderer rend;
+    public Sprite fullHealth, halfHealth, tfHealth;
 
-    public int pointsAdded;
+    private int pointsAdded;
 
-    public void Awake()
+    void Start()
     {
         parent = GetComponentInParent<ParentBumber_function>();
+        rend = GetComponent<SpriteRenderer>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         animator = GetComponent<Animator>();
+        animator.SetBool("Full_Health state", true);
+        //animator.SetBool("Destroy bumper", false);
+
+    }
+
+    void Update()
+    {
+        BumberChangeSprite();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -31,41 +43,121 @@ public class Bumber_Code : MonoBehaviour
                script is attach to. AddForce(Vector2.Reflect()) takes the velocity value and the point the ball collided with the object and "reflects"
                the ball object to the other direction. bumperForce basically adds to the velocity of the ball.
              */
-            ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumperForce));
-            bumperHealth--;
+            ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumberForce));
+            //BumberHealthCheck();
+            //bumberHealth--;
 
             //Debug.Log("Ball is reflected");
-            if (bumperHealth > 0) {
-                if(bumperHealth == 3) {
-                    animator.SetBool("Full_Health state 1", true);
+            
+            if (bumberHealth > 0) {
+                if(bumberHealth == 3) {
+                    //animator.SetBool("Full_Health state 1", true);
+                    animator.SetBool("Half-Damage state", true);
+                    animator.SetBool("Full_Health state", false);
+                    pointsAdded = 100;
+                    gc.UpdateScore(pointsAdded);
+                    bumberHealth--;
+
 
                     //Debug.Log("Full_Health state 1 is true");
                 }
-                else if(bumperHealth == 2) {
-                    animator.SetBool("Half-Damage state 0", true);
-                    animator.SetBool("Full_Health state 1", false);
-                    pointsAdded = 100;
-                    gc.UpdateScore(pointsAdded);
-
-                }
-                else if (bumperHealth == 1) {
-                    animator.SetBool("OneFourth-Damage state", true);
-                    animator.SetBool("Half-Damage state 0", false);
+                else if(bumberHealth == 2) {
+                    animator.SetBool("25-Damage state", true);
+                    animator.SetBool("Half-Damage state", false);
                     pointsAdded = 50;
                     gc.UpdateScore(pointsAdded);
+                    bumberHealth--;
+
+                }
+                else if (bumberHealth == 1) {
+                    //animator.SetBool("OneFourth-Damage state", true);
+                    //animator.SetBool("Half-Damage state 0", false);
+                    //pointsAdded = 50;
+                    //animator.SetBool("Destroy bumper", true);
+                    animator.SetBool("25-Damage state", false);
+                    animator.SetBool("Destroyed", true);
+                    pointsAdded = 10;
+                    gc.UpdateScore(pointsAdded);
+                    bumberHealth--;
 
                 }
             }
             else {
-                pointsAdded = 10;
-                gc.UpdateScore(pointsAdded);
-                animator.SetBool("Destroy bumper", true);
-                animator.SetBool("OneFourth-Damage state", false);
+                //pointsAdded = 10;
+                //gc.UpdateScore(pointsAdded);
+                //animator.SetBool("Destroy bumper", true);
                 //animator.SetBool("OneFourth-Damage state", false);
-                parent.bumpers.Remove(gameObject);
-                Destroy(gameObject);
+                //animator.SetBool("OneFourth-Damage state", false);
+                //parent.bumpers.Remove(gameObject);
+                //Destroy(gameObject);
                 //Debug.Log("bumper is destroy");
             }
         }
     }
+
+    public void BumberChangeSprite()
+    {
+        if (animator.GetBool("Full_Health state") == true)
+        {
+            rend.sprite = fullHealth;
+        }
+
+        if (animator.GetBool("Half-Damage state") == true)
+        {
+            rend.sprite = halfHealth;
+        }
+
+        if (animator.GetBool("25-Damage state") == true)
+        {
+            rend.sprite = tfHealth;
+        }
+
+        if (animator.GetBool("Destroyed") == true)
+        {
+            parent.bumpers.Remove(gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    /*
+    void BumberHealthCheck()
+    {
+        if (bumberHealth > 0)
+        {
+            if (bumberHealth == 3)
+            {
+                //animator.SetBool("Full_Health state 1", true);
+                animator.SetBool("Half-Damage state", true);
+                animator.SetBool("Full_Health state", false);
+                pointsAdded = 100;
+                gc.UpdateScore(pointsAdded);
+                //bumberHealth--;
+
+
+                //Debug.Log("Full_Health state 1 is true");
+            }
+            else if (bumberHealth == 2)
+            {
+                animator.SetBool("25-Damage state", true);
+                animator.SetBool("Half-Damage state", false);
+                pointsAdded = 50;
+                gc.UpdateScore(pointsAdded);
+                //bumberHealth--;
+
+            }
+            else if (bumberHealth == 1)
+            {
+                //animator.SetBool("OneFourth-Damage state", true);
+                //animator.SetBool("Half-Damage state 0", false);
+                //pointsAdded = 50;
+                //animator.SetBool("Destroy bumper", true);
+                animator.SetBool("25-Damage state", false);
+                animator.SetBool("Destroyed", true);
+                pointsAdded = 10;
+                gc.UpdateScore(pointsAdded);
+                //bumberHealth--;
+
+            }
+        }
+    }*/
 }

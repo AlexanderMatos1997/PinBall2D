@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 399565849639820109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.72, y: 8.56, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 4
@@ -114,7 +114,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &4443444099801094316
 Animator:
@@ -218,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 1587623009700364006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.72, y: 8.56, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 0
@@ -303,7 +305,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &5050849616098329417
 Animator:
@@ -353,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 1587623010231770948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.69, y: 4.7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 1
@@ -438,7 +442,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &6304204266100931206
 Animator:
@@ -488,7 +494,7 @@ Transform:
   m_GameObject: {fileID: 1587623010550017112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.1, y: -8.7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 2
@@ -573,7 +579,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &7792441170249757639
 Animator:
@@ -623,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 1869610982098733422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.1, y: 0.9, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 6
@@ -708,7 +716,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &6325584629435657474
 Animator:
@@ -758,7 +768,7 @@ Transform:
   m_GameObject: {fileID: 2520184782006562411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.1, y: 0.9, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 7
@@ -843,7 +853,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &8587176350486540607
 Animator:
@@ -893,7 +905,7 @@ Transform:
   m_GameObject: {fileID: 3959856602632344482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.1, y: -8.7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 5
@@ -978,7 +990,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &8191570324934386391
 Animator:
@@ -1028,7 +1042,7 @@ Transform:
   m_GameObject: {fileID: 8900367897920875643}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.69, y: 4.7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587623009018916070}
   m_RootOrder: 3
@@ -1113,7 +1127,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &4095050509263290216
 Animator:

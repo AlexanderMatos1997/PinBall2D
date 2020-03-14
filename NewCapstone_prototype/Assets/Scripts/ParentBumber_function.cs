@@ -13,18 +13,18 @@ public class ParentBumber_function : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("GameController is found");
+        //Debug.Log("GameController is found");
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //BumberList();
         if (bumpers == null || bumpers.Count == 0)
         {
             bumpers = new List<GameObject>();
-            Debug.Log("bumpers has a new list");
+            //Debug.Log("bumpers has a new list");
             foreach (GameObject BB in GameObject.FindGameObjectsWithTag("Bumper"))
             {
                 bumpers.Add(BB);
                 //gameController.pbInScene = true;
-                Debug.Log("Bumpers are added to the list");
+                //Debug.Log("Bumpers are added to the list");
             }
         }
     }

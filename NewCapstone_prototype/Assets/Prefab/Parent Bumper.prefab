@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5797567465680927135}
   - component: {fileID: 4558347731329285564}
-  - component: {fileID: 3520828037708112119}
   - component: {fileID: 2139998520230717511}
   - component: {fileID: 3551780573711691547}
+  - component: {fileID: 1931063603283373006}
   m_Layer: 0
   m_Name: Bumper04
   m_TagString: Bumper
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 915150291037804688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.28, y: -2.12, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 3
@@ -83,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3520828037708112119
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915150291037804688}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &2139998520230717511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +98,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &3551780573711691547
 Animator:
@@ -135,6 +121,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &1931063603283373006
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915150291037804688}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &1397374828591681467
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,9 +147,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2757307102843867351}
   - component: {fileID: 3582426156184714817}
-  - component: {fileID: 8101537197064088282}
   - component: {fileID: 2742403550308555977}
   - component: {fileID: 5011822547476146396}
+  - component: {fileID: 356500175347330181}
   m_Layer: 0
   m_Name: Bumper05
   m_TagString: Bumper
@@ -164,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 1397374828591681467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.28, y: -2.12, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 4
@@ -218,22 +220,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8101537197064088282
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397374828591681467}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &2742403550308555977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +235,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &5011822547476146396
 Animator:
@@ -270,6 +258,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &356500175347330181
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397374828591681467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &1490422388656691352
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,9 +284,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1490422388656691364}
   - component: {fileID: 1490422388656691365}
-  - component: {fileID: 1490422388656691366}
   - component: {fileID: 1490422388656691367}
   - component: {fileID: 7963237180030551815}
+  - component: {fileID: 1814826827638944846}
   m_Layer: 0
   m_Name: Bumper03
   m_TagString: Bumper
@@ -299,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 1490422388656691352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.05, y: 7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 2
@@ -353,22 +357,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1490422388656691366
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490422388656691352}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &1490422388656691367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +372,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &7963237180030551815
 Animator:
@@ -405,6 +395,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &1814826827638944846
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422388656691352}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &1490422389008493444
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,9 +421,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1490422389008493440}
   - component: {fileID: 1490422389008493441}
-  - component: {fileID: 1490422389008493442}
   - component: {fileID: 1490422389008493443}
   - component: {fileID: 6186359921878535750}
+  - component: {fileID: 7181313068575699169}
   m_Layer: 0
   m_Name: Bumper02
   m_TagString: Bumper
@@ -434,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 1490422389008493444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.05, y: 7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 1
@@ -488,22 +494,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1490422389008493442
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490422389008493444}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &1490422389008493443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +509,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &6186359921878535750
 Animator:
@@ -540,6 +532,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &7181313068575699169
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422389008493444}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &1490422389548714534
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,9 +558,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1490422389548714531}
   - component: {fileID: 1490422389548714532}
-  - component: {fileID: 1490422389548714533}
   - component: {fileID: 1490422389548714530}
   - component: {fileID: 4953797980710745993}
+  - component: {fileID: 3723249450545952025}
   m_Layer: 0
   m_Name: Bumper01
   m_TagString: Bumper
@@ -569,7 +577,7 @@ Transform:
   m_GameObject: {fileID: 1490422389548714534}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 0
@@ -623,22 +631,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1490422389548714533
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490422389548714534}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &1490422389548714530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,7 +646,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &4953797980710745993
 Animator:
@@ -675,6 +669,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &3723249450545952025
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490422389548714534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &1490422390213384216
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,9 +748,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8014386896788593240}
   - component: {fileID: 1793498397347576270}
-  - component: {fileID: 1630408393635198109}
   - component: {fileID: 3701909278766870860}
   - component: {fileID: 852705847081673352}
+  - component: {fileID: 7264829499870306380}
   m_Layer: 0
   m_Name: Bumper06
   m_TagString: Bumper
@@ -757,7 +767,7 @@ Transform:
   m_GameObject: {fileID: 5372583050679692637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: -7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 5
@@ -811,22 +821,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1630408393635198109
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5372583050679692637}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &3701909278766870860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,7 +836,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &852705847081673352
 Animator:
@@ -863,6 +859,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &7264829499870306380
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372583050679692637}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
 --- !u!1 &8374091234192778503
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,11 +885,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3669196604367718888}
   - component: {fileID: 6333150582218679488}
-  - component: {fileID: 351481138953553990}
   - component: {fileID: 1859538442311862849}
   - component: {fileID: 7925975329836092624}
+  - component: {fileID: 5177751120863958654}
   m_Layer: 0
-  m_Name: Bumper06 (1)
+  m_Name: Bumper07
   m_TagString: Bumper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,7 +904,7 @@ Transform:
   m_GameObject: {fileID: 8374091234192778503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6, y: -7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490422390213384230}
   m_RootOrder: 6
@@ -946,22 +958,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &351481138953553990
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374091234192778503}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &1859538442311862849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,7 +973,9 @@ MonoBehaviour:
   parent: {fileID: 0}
   bumperForce: 2
   bumperHealth: 3
-  bumpSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  fullHealth: {fileID: 21300000, guid: 5e69c1cbea707cf4cb4ac1948d9248b7, type: 3}
+  halfHealth: {fileID: 21300000, guid: d818dc31e7ce693409467a18d1722249, type: 3}
+  tfHealth: {fileID: 21300000, guid: 98fcb5a24c0e68c4da904dcc7ba7136b, type: 3}
   pointsAdded: 0
 --- !u!95 &7925975329836092624
 Animator:
@@ -998,3 +996,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &5177751120863958654
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374091234192778503}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28

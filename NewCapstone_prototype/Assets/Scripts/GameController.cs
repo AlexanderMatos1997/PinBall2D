@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     public bool inPlay;
     public bool gameOverBool;
     public bool pbInScene;
+    public bool multiBallIP;
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +52,17 @@ public class GameController : MonoBehaviour
             BumperRandom();
         }
 
+        if(Pinballs.Count > 1) {
+            multiBallIP = true;
+        }
+        else { multiBallIP = false; }
+
         Pinballs = new List<GameObject>();
-        Debug.Log("Pinballs list created");
+        //Debug.Log("Pinballs list created");
         foreach(GameObject PBs in GameObject.FindGameObjectsWithTag("Ball"))
         {
             Pinballs.Add(PBs);
-            Debug.Log("Ball object added to Pinballs list");
+            //Debug.Log("Ball object added to Pinballs list");
         }
     }
 
@@ -91,7 +97,10 @@ public class GameController : MonoBehaviour
 
     public void ActivateMultiBall()
     {
-        StartCoroutine(MultiBallSpawn());
+        if(!multiBallIP)
+        {
+            StartCoroutine(MultiBallSpawn());
+        } 
     }
 
     IEnumerator MultiBallSpawn()
