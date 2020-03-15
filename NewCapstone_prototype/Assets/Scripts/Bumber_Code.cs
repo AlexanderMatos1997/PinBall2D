@@ -14,6 +14,7 @@ public class Bumber_Code : MonoBehaviour
     private byte bumberHealth = 3;
     //public Sprite bumpSprite;
     private SpriteRenderer rend;
+    public ParticleSystem bbParticle;
     public Sprite fullHealth, halfHealth, tfHealth;
 
     private int pointsAdded;
@@ -44,6 +45,7 @@ public class Bumber_Code : MonoBehaviour
                the ball object to the other direction. bumperForce basically adds to the velocity of the ball.
              */
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumberForce));
+            CreateParticle();
             //BumberHealthCheck();
             //bumberHealth--;
 
@@ -57,8 +59,6 @@ public class Bumber_Code : MonoBehaviour
                     pointsAdded = 100;
                     gc.UpdateScore(pointsAdded);
                     bumberHealth--;
-
-
                     //Debug.Log("Full_Health state 1 is true");
                 }
                 else if(bumberHealth == 2) {
@@ -119,45 +119,8 @@ public class Bumber_Code : MonoBehaviour
         }
     }
 
-    /*
-    void BumberHealthCheck()
+    void CreateParticle()
     {
-        if (bumberHealth > 0)
-        {
-            if (bumberHealth == 3)
-            {
-                //animator.SetBool("Full_Health state 1", true);
-                animator.SetBool("Half-Damage state", true);
-                animator.SetBool("Full_Health state", false);
-                pointsAdded = 100;
-                gc.UpdateScore(pointsAdded);
-                //bumberHealth--;
-
-
-                //Debug.Log("Full_Health state 1 is true");
-            }
-            else if (bumberHealth == 2)
-            {
-                animator.SetBool("25-Damage state", true);
-                animator.SetBool("Half-Damage state", false);
-                pointsAdded = 50;
-                gc.UpdateScore(pointsAdded);
-                //bumberHealth--;
-
-            }
-            else if (bumberHealth == 1)
-            {
-                //animator.SetBool("OneFourth-Damage state", true);
-                //animator.SetBool("Half-Damage state 0", false);
-                //pointsAdded = 50;
-                //animator.SetBool("Destroy bumper", true);
-                animator.SetBool("25-Damage state", false);
-                animator.SetBool("Destroyed", true);
-                pointsAdded = 10;
-                gc.UpdateScore(pointsAdded);
-                //bumberHealth--;
-
-            }
-        }
-    }*/
+        bbParticle.Play();
+    }
 }
