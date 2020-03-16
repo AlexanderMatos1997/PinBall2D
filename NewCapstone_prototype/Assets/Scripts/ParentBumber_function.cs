@@ -4,49 +4,29 @@ using UnityEngine;
 
 public class ParentBumber_function : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> bumpers;
+    [SerializeField] public List<GameObject> bumbers;
 
     public GameController gameController;
-
-    public int parentCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("GameController is found");
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        //BumberList();
-        if (bumpers == null || bumpers.Count == 0)
+        if (bumbers == null || bumbers.Count == 0)
         {
-            bumpers = new List<GameObject>();
-            //Debug.Log("bumpers has a new list");
+            bumbers = new List<GameObject>();
             foreach (GameObject BB in GameObject.FindGameObjectsWithTag("Bumper"))
             {
-                bumpers.Add(BB);
-                //gameController.pbInScene = true;
-                //Debug.Log("Bumpers are added to the list");
+                bumbers.Add(BB);
             }
         }
     }
 
-    //private void Awake()
-    //{
-    //    if (bumpers == null)
-    //    {
-    //        bumpers = new List<GameObject>();
-    //        foreach (GameObject BB in GameObject.FindGameObjectsWithTag("Bumper"))
-    //        {
-    //            bumpers.Add(BB);
-    //        }
-    //    }
-    //}
-
-    // Update is called once per frame
     void Update()
     {
         //Debug.Log("objects in list is " + bumbers.Count);
 
-        if(bumpers.Count == 0 /*&& bumpers ==null*/)
+        if(bumbers.Count == 0 /*&& bumpers ==null*/)
         {
             Destroy(gameObject);
             gameController.pbInScene = false;

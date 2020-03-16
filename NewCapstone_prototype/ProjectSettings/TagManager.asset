@@ -46,9 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Bumber
+  - name: ParticleShards
     uniqueID: 4169378383
     locked: 0
-  - name: Particle
+  - name: ParticlePoints
     uniqueID: 2220158841
+    locked: 0
+  - name: Bumber
+    uniqueID: 641293699
     locked: 0

@@ -15,6 +15,7 @@ public class Bumber_Code : MonoBehaviour
     //public Sprite bumpSprite;
     private SpriteRenderer rend;
     public ParticleSystem bbParticle;
+    public Material redShatter, blueShatter, greenShatter;
     public Sprite fullHealth, halfHealth, tfHealth;
 
     private int pointsAdded;
@@ -45,7 +46,7 @@ public class Bumber_Code : MonoBehaviour
                the ball object to the other direction. bumperForce basically adds to the velocity of the ball.
              */
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumberForce));
-            CreateParticle();
+            //CreateParticle();
             //BumberHealthCheck();
             //bumberHealth--;
 
@@ -114,13 +115,17 @@ public class Bumber_Code : MonoBehaviour
 
         if (animator.GetBool("Destroyed") == true)
         {
-            parent.bumpers.Remove(gameObject);
+            parent.bumbers.Remove(gameObject);
             Destroy(gameObject);
         }
     }
 
     void CreateParticle()
     {
+        if(bumberHealth == 3)
+        {
+            bbParticle.GetComponent<ParticleSystemRenderer>().material = redShatter;
+        }
         bbParticle.Play();
     }
 }
