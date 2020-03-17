@@ -32,7 +32,7 @@ public class Slingshot_Function : MonoBehaviour
             {
                 Debug.Log("Ball is fast enough");
                 float pBall = collision.relativeVelocity.magnitude;
-                //rb2D.velocity = new Vector2(rb2D.velocity.x * 1.5f, rb2D.velocity.y * 1.5f);
+                rb2D.velocity = new Vector2(rb2D.velocity.x * 1.5f, rb2D.velocity.y * 1.5f);
                 rb2D.AddForce(transform.forward * Slingshot_force * pBall);
                 Debug.Log("Ball's new velocity is " + collision.relativeVelocity.magnitude);
             }
