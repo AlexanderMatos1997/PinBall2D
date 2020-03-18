@@ -17,8 +17,6 @@ public class Bumber_Code : MonoBehaviour
     public GameObject bumberShatter;
     public GameObject particleScore;
     private SpriteRenderer rend;
-    //public ParticleSystem bbParticle;
-    //public ParticleSystemRenderer mrParticle;
     public GameObject score100, score50, score10;
     public GameObject redShatter, blueShatter, greenShatter;
     public Sprite fullHealth, halfHealth, tfHealth;
