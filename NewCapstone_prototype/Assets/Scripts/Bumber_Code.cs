@@ -12,13 +12,13 @@ public class Bumber_Code : MonoBehaviour
     Material[] shatterParticle;
 
     //public int points;
-    private float bumberForce = 1.5f;
+    private float bumberForce = 0.075f;
     private byte bumberHealth = 3;
     public GameObject bumberShatter;
     public GameObject particleScore;
     private SpriteRenderer rend;
     public GameObject score100, score50, score10;
-    public GameObject redShatter, blueShatter, greenShatter;
+    public GameObject particleShatter;
     public Sprite fullHealth, halfHealth, tfHealth;
 
     private int pointsAdded;
@@ -116,7 +116,7 @@ public class Bumber_Code : MonoBehaviour
 
     void ShatterParticle()
     {
-        bumberShatter = Instantiate(redShatter, gameObject.transform.position, gameObject.transform.rotation);
+        bumberShatter = Instantiate(particleShatter, gameObject.transform.position, gameObject.transform.rotation);
     }
 
     void ScoreParticle()

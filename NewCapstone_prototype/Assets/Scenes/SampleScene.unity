@@ -2350,7 +2350,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.4e-43, y: 4.9e-44, z: 0, w: -5.404975e-32}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4014,6 +4014,10 @@ MonoBehaviour:
   Pinballs: []
   bumperRandomizer:
   - {fileID: 98486275702327158, guid: 41c95b9a1c38e9142932bac354217534, type: 3}
+  - {fileID: 1490422390213384216, guid: 1599a52b593c5a948b3dc2c927703db6, type: 3}
+  - {fileID: 2524077617262217201, guid: 076a9535a6295734e8ae8e0ca96cb087, type: 3}
+  - {fileID: 1587623009018916056, guid: dae61acbc3fb50f45a459ef97da4061e, type: 3}
+  - {fileID: 1248699752428005752, guid: 27769cf0973db674e88b295b8bee3134, type: 3}
   scoreText: {fileID: 1838575095}
   livesText: {fileID: 422413528}
   score: 0
