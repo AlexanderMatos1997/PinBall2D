@@ -39,5 +39,19 @@ public class GetterActive : MonoBehaviour
             }
             //Debug.Log("areallActive is set to true");
         }
+        if (gc.multiBallIP)
+        {
+            foreach (GameObject go in a)
+            {
+                go.GetComponent<LightUpScore>().IsActive = false;
+            }
+        }
+        if (!gc.inPlay)
+        {
+            foreach (GameObject go in a)
+            {
+                go.GetComponent<LightUpScore>().IsActive = false;
+            }
+        }
     }
 }
