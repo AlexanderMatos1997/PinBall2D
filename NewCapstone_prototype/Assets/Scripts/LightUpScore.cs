@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightUpScore : MonoBehaviour
 {
     [SerializeField] private bool isActivated;
+    public Sprite SpriteTest;
 
     public bool IsActive
     {
@@ -14,6 +15,7 @@ public class LightUpScore : MonoBehaviour
         }
         set { if (value) {
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(15f, 64f, 113f);
+                gameObject.GetComponent<SpriteRenderer>().sprite = SpriteTest;
                 //Debug.Log("Ball is detected");
                 isActivated = true;
             }
