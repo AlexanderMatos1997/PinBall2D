@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RestPosition: -30000
   ActivePosition: 35000
+  audioOnce: 0
   InputKey: RightFlipper
 --- !u!50 &2358863461897799967
 Rigidbody2D:
@@ -143,7 +144,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -28
-    m_UpperAngle: 50
+    m_UpperAngle: 25
 --- !u!60 &6122221914670178836
 PolygonCollider2D:
   m_ObjectHideFlags: 0

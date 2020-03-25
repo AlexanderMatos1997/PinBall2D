@@ -145,7 +145,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 28
-    m_UpperAngle: -50
+    m_UpperAngle: -25
 --- !u!60 &8826802952066517785
 PolygonCollider2D:
   m_ObjectHideFlags: 0

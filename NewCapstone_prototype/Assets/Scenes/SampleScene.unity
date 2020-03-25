@@ -357,7 +357,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -28
-    m_UpperAngle: 50
+    m_UpperAngle: 25
 --- !u!50 &54175204
 Rigidbody2D:
   serializedVersion: 4
@@ -3261,7 +3261,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 28
-    m_UpperAngle: -50
+    m_UpperAngle: -25
 --- !u!82 &1407408846
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4138,7 +4138,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 28
-    m_UpperAngle: -50
+    m_UpperAngle: -25
 --- !u!50 &1834484314
 Rigidbody2D:
   serializedVersion: 4
@@ -4522,7 +4522,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -28
-    m_UpperAngle: 50
+    m_UpperAngle: 25
 --- !u!50 &1854002299
 Rigidbody2D:
   serializedVersion: 4
