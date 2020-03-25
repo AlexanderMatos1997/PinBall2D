@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     /*[SerializeField]*/ private int lives = 3;
 
     [SerializeField] private GameObject gameOverPanel;
+    public Text highScoreText;
+    public InputField highScoreInput;
+    
 
     public GameObject ballPrefab;
     public GameObject ballSA;
@@ -121,6 +124,27 @@ public class GameController : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         gameOverBool = true;
+
+        int highScore = PlayerPrefs.GetInt("HIGHSCORE");
+        if(score > highScore)
+        {
+            PlayerPrefs.SetInt("HIGHSCORE", score);
+
+            highScoreText.text = "New High Score! " + "\n" + "Enter Your Name Below";
+            highScoreInput.gameObject.SetActive(true);
+        }
+        else
+        {
+            highScoreText.text = PlayerPrefs.GetString("HIGHSCORENAME") + "HighScore was " + highScore;
+        }
+    }
+
+    public void NewHighScore()
+    {
+        string highScoreName = highScoreInput.text;
+        PlayerPrefs.SetString("HIGHSCORENAME", highScoreName);
+        highScoreInput.gameObject.SetActive(false);
+        highScoreText.text = "Congratulations " + highScoreName + "\n" + "You earn the Highest score: " + "\n" + score;
     }
 
     public void Restart()
