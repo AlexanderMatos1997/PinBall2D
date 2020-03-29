@@ -32,13 +32,14 @@ public class LightUpScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
     
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Ball")) {
             if (!IsActive) {
                 IsActive = true;
+                FindObjectOfType<AudioManager>().Play("MultiBall");
+
             }
             else {
                 IsActive = false;

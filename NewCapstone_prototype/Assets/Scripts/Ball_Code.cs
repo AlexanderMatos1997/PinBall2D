@@ -5,15 +5,19 @@ using UnityEngine;
 public class Ball_Code : MonoBehaviour
 {
     public GameController gc;
+    AudioSource ballCollision;
 
     // Start is called before the first frame update
     void Start()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        ballCollision = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ballCollision.Play();
+
         if (collision.gameObject.CompareTag("KillBox"))
         {
             foreach(GameObject PBs in gc.Pinballs)

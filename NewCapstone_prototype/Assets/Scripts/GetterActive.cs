@@ -29,6 +29,7 @@ public class GetterActive : MonoBehaviour
                 break;
             }
         }
+
         if (areallActive)
         {
             gc.ActivateMultiBall();

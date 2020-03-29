@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
     public bool pbInScene;
     public bool multiBallIP;
 
+    public GameObject MainCamera;
+    public float CameraForce = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
