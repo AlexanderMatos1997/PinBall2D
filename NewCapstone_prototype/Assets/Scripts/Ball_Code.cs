@@ -32,9 +32,10 @@ public class Ball_Code : MonoBehaviour
             }
             if(gc.Pinballs.Count == 0)
             {
+                gc.UpdateLives(1);
                 gc.inPlay = false;
                 //Debug.Log("All pinballs are gone");
-                gc.UpdateLives(1);
+                //gc.UpdateLives(1);
                 //Debug.Log("New round has started");
             }
         }

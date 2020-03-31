@@ -20,6 +20,8 @@ public class Bumber_Code : MonoBehaviour
     public GameObject score100, score50, score10;
     public GameObject particleShatter;
     public Sprite fullHealth, halfHealth, tfHealth;
+    public GameObject bumberLight;
+    public GameObject lightSpawn;
 
     private int pointsAdded;
 
@@ -49,6 +51,7 @@ public class Bumber_Code : MonoBehaviour
             ballRB.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(ballRB.GetComponent<Rigidbody2D>().velocity, collision.contacts[0].normal * bumberForce));
             ShatterParticle();
             ScoreParticle();
+            BumberLight();
             
             if (bumberHealth > 0) {
                 if(bumberHealth == 3) {
@@ -117,6 +120,7 @@ public class Bumber_Code : MonoBehaviour
     void ShatterParticle()
     {
         bumberShatter = Instantiate(particleShatter, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(bumberShatter, 3.5f);
     }
 
     void ScoreParticle()
@@ -135,5 +139,12 @@ public class Bumber_Code : MonoBehaviour
         {
             particleScore = Instantiate(score10, gameObject.transform.position, gameObject.transform.rotation);
         }
+
+        Destroy(particleScore, 3.5f);
+    }
+     void BumberLight()
+    {
+        lightSpawn = Instantiate(bumberLight, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(lightSpawn, 0.25f);
     }
 }

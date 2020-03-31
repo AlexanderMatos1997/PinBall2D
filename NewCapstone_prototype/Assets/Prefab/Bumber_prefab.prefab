@@ -107,6 +107,8 @@ MonoBehaviour:
   fullHealth: {fileID: 21300000, guid: 300a6d2004189ae45bb30eb5705e8ea4, type: 3}
   halfHealth: {fileID: 21300000, guid: 5407c929ca3cc484ebc784bc02ee56a1, type: 3}
   tfHealth: {fileID: 21300000, guid: df389d49eeb72c847921e4318856eceb, type: 3}
+  bumberLight: {fileID: 5294031702348325579, guid: 3bb7826d0f9588d43806236af2773c78,
+    type: 3}
 --- !u!95 &821887687974929128
 Animator:
   serializedVersion: 3

@@ -8,6 +8,9 @@ public class Slingshot_Function : MonoBehaviour
     public float relativeVelocityMax;
     public float Slingshot_force;
 
+    public GameObject lightEffect;
+    public GameObject instantLE;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,8 @@ public class Slingshot_Function : MonoBehaviour
                 float pBall = collision.attachedRigidbody.velocity.magnitude;
                 rb2D.velocity = new Vector2(rb2D.velocity.x * 1.5f, rb2D.velocity.y * 1.5f);
                 rb2D.AddForce(transform.forward * Slingshot_force * pBall);
+                SlingShot();
+
                 Debug.Log("Ball's new velocity is " + collision.attachedRigidbody.velocity.magnitude);
             }
             else
@@ -73,5 +78,11 @@ public class Slingshot_Function : MonoBehaviour
         {
             Debug.Log("Ball wasn't fast enough");
         }
+    }
+
+    void SlingShot()
+    {
+        instantLE = Instantiate(lightEffect, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(instantLE, 0.45f);
     }
 }
