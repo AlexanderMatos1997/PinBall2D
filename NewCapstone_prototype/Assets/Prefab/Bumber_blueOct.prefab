@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7326444002502033337}
   - component: {fileID: 859046167895254887}
   - component: {fileID: 9215731206537459023}
+  - component: {fileID: 2560747572968474823}
   m_Layer: 0
   m_Name: Bumber_blueOct
   m_TagString: Bumper
@@ -228,3 +229,24 @@ PolygonCollider2D:
       - {x: -1.63, y: 1.55}
       - {x: -1.63, y: 1.65}
       - {x: -1.65, y: 1.67}
+--- !u!50 &2560747572968474823
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000844970082419176}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 9.581299
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7

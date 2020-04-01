@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7287067806017870390}
   - component: {fileID: 821887687974929128}
   - component: {fileID: 5731572023456507762}
+  - component: {fileID: 4604508506499618944}
   m_Layer: 0
   m_Name: Bumber_prefab
   m_TagString: Bumper
@@ -109,6 +110,7 @@ MonoBehaviour:
   tfHealth: {fileID: 21300000, guid: df389d49eeb72c847921e4318856eceb, type: 3}
   bumberLight: {fileID: 5294031702348325579, guid: 3bb7826d0f9588d43806236af2773c78,
     type: 3}
+  lightSpawn: {fileID: 0}
 --- !u!95 &821887687974929128
 Animator:
   serializedVersion: 3
@@ -224,3 +226,24 @@ PolygonCollider2D:
       - {x: 0.32, y: -1.5999999}
       - {x: 0.45999998, y: -1.5799999}
       - {x: 0.48, y: -1.53}
+--- !u!50 &4604508506499618944
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2965966798358979687}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 8.9731
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7

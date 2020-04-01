@@ -7,6 +7,11 @@ public class Ball_Code : MonoBehaviour
     public GameController gc;
     AudioSource ballCollision;
 
+    public GameObject ballShatter;
+    private GameObject instantBall;
+
+    public GameObject ballFlash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,12 @@ public class Ball_Code : MonoBehaviour
 
         if (collision.gameObject.CompareTag("KillBox"))
         {
+            instantBall = Instantiate(ballShatter, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(instantBall, 1f);
+
+            GameObject ballLE = Instantiate(ballFlash, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(ballLE, .25f);
+
             foreach(GameObject PBs in gc.Pinballs)
             {
                 if (PBs == gameObject)

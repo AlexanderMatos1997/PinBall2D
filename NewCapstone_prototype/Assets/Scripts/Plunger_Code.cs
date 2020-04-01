@@ -16,11 +16,15 @@ public class Plunger_Code : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject ballLaunch;
     public GameController gameController;
+    AudioSource plungerAudio;
+    public AudioClip plungerPowerUp;
+    public AudioClip launchAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        plungerAudio = GetComponent<AudioSource>();
 
         powerSlider.minValue = minPower;
         powerSlider.maxValue = maxPower;
@@ -50,6 +54,10 @@ public class Plunger_Code : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
+                /*
+                plungerAudio.clip = plungerPowerUp;
+                plungerAudio.Play();*/
+
                 if (power <= maxPower)
                 {
                     power += shootValue * Time.deltaTime;
@@ -60,6 +68,9 @@ public class Plunger_Code : MonoBehaviour
                 GameObject ballRB = Instantiate(ballPrefab, ballLaunch.transform.position, ballLaunch.transform.rotation);
                 ballRB.GetComponent<Rigidbody2D>().AddForce(power * Vector2.left);
                 gameController.inPlay = true;
+
+                plungerAudio.clip = launchAudio;
+                plungerAudio.Play();
             }
         }
     }

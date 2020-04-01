@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8590821576280264800}
   - component: {fileID: 1837338106296027326}
   - component: {fileID: 1121965778506672084}
+  - component: {fileID: 4910974620593751589}
   m_Layer: 0
   m_Name: Bumber_GTri
   m_TagString: Bumper
@@ -219,3 +220,24 @@ PolygonCollider2D:
       - {x: 1.985, y: -1.73}
       - {x: 2.0449998, y: -1.6899999}
       - {x: 2.095, y: -1.61}
+--- !u!50 &4910974620593751589
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265291667065089585}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 9.51305
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
