@@ -13,13 +13,13 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
+    [SerializeField] public Text messageText;
     [SerializeField] private int score;
-    /*[SerializeField]*/ private int lives = 3;
+    [SerializeField] public int lives = 3;
+    [SerializeField] private GameObject playAgainButton;
 
-    [SerializeField] private GameObject gameOverPanel;
+    //[SerializeField] private GameObject gameOverPanel;
     public Text highScoreText;
-    public InputField highScoreInput;
-    
 
     public GameObject ballPrefab;
     public GameObject ballSA;
@@ -42,11 +42,12 @@ public class GameController : MonoBehaviour
         inPlay = false;
         pbInScene = false;
         gameOverBool = false;
+        playAgainButton.SetActive(false);
 
-        gameOverPanel.SetActive(false);
 
         scoreText.text = "Score: " + score;
         livesText.text = "Lives: " + lives;
+        messageText.text = " ";
     }
 
     // Update is called once per frame
@@ -89,6 +90,11 @@ public class GameController : MonoBehaviour
         livesText.text = "Lives: " + lives;
     }
 
+    public void UpdateMessage()
+    {
+
+    }
+
     void SpawnBall()
     {
         Instantiate(ballPrefab, ballSA.transform.position, ballSA.transform.rotation);
@@ -125,7 +131,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverPanel.SetActive(true);
+        playAgainButton.SetActive(true);
         gameOverBool = true;
 
         int highScore = PlayerPrefs.GetInt("HIGHSCORE");
@@ -133,21 +139,12 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("HIGHSCORE", score);
 
-            highScoreText.text = "New High Score! " + "\n" + "Enter Your Name Below";
-            highScoreInput.gameObject.SetActive(true);
+            messageText.text = "Congratulations!" + "\n" + "New High Score!" + "\n" + highScore; ;
         }
         else
         {
-            highScoreText.text = PlayerPrefs.GetString("HIGHSCORENAME") + "HighScore was " + highScore;
+            messageText.text = "HighScore is currently: " + highScore + "\n" + "Your score was " + (highScore - score) + "\n" + "in beating the previous HighScore.";
         }
-    }
-
-    public void NewHighScore()
-    {
-        string highScoreName = highScoreInput.text;
-        PlayerPrefs.SetString("HIGHSCORENAME", highScoreName);
-        highScoreInput.gameObject.SetActive(false);
-        highScoreText.text = "Congratulations " + highScoreName + "\n" + "You earn the Highest score: " + "\n" + score;
     }
 
     public void Restart()

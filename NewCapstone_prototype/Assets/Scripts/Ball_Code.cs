@@ -37,7 +37,6 @@ public class Ball_Code : MonoBehaviour
                 {
                     gc.Pinballs.Remove(gameObject);
                     Destroy(gameObject);
-                    //Debug.Log("Pinball removed from List");
                     break;
                 }
             }
@@ -45,10 +44,22 @@ public class Ball_Code : MonoBehaviour
             {
                 gc.UpdateLives(1);
                 gc.inPlay = false;
-                //Debug.Log("All pinballs are gone");
-                //gc.UpdateLives(1);
-                //Debug.Log("New round has started");
+                if(gc.lives > 0)
+                {
+                    WhenBallDestroyed();
+                }
             }
         }
+    }
+    public void WhenBallDestroyed()
+    {
+        StartCoroutine(messageBallDestroyed());
+    }
+
+    IEnumerator messageBallDestroyed()
+    {
+        gc.messageText.text = ("Ball Destroyed");
+        yield return new WaitForSeconds(2);
+        gc.messageText.text = ("");
     }
 }
