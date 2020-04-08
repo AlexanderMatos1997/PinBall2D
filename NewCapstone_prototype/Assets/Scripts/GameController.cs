@@ -143,12 +143,12 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            messageText.text = "HighScore is currently: " + highScore + "\n" + "Your score was " + (highScore - score) + "\n" + "in beating the previous HighScore.";
+            messageText.text = "HighScore is currently: " + highScore + "\n" + "Your score was " + score;
         }
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainGame");
     }
 }

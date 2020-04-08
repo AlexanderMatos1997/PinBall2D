@@ -29,19 +29,14 @@ public class Bumber_Code : MonoBehaviour
     {
         parent = GetComponentInParent<ParentBumber_function>();
         rend = GetComponent<SpriteRenderer>();
-        //bbParticle = GetComponentInChildren<ParticleSystem>();
-       // mrParticle = GetComponentInChildren<ParticleSystemRenderer>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         animator = GetComponent<Animator>();
         animator.SetBool("Full_Health state", true);
-        //animator.SetBool("Destroy bumper", false);
-
     }
 
     void Update()
     {
         BumberChangeSprite();
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -55,36 +50,28 @@ public class Bumber_Code : MonoBehaviour
             
             if (bumberHealth > 0) {
                 if(bumberHealth == 3) {
-                    //mrParticle.material = new Material(redShatter);
-                    //bbParticle.Play();
-                    //bumberShatter = Instantiate(redShatter, gameObject.transform.position, gameObject.transform.rotation);
-                    //Destroy(bumberShatter, 3.5f);
-                    //Destroy(bumberShatter.gameObject, 2.5f);
                     animator.SetBool("Half-Damage state", true);
                     animator.SetBool("Full_Health state", false);
                     pointsAdded = 100;
+                    gc.messageText.text = ("+100");
                     gc.UpdateScore(pointsAdded);
                     bumberHealth--;
                 }
                 else if(bumberHealth == 2) {
-                    //mrParticle.material = new Material(blueShatter);
-                    //bbParticle.Play();
                     animator.SetBool("25-Damage state", true);
                     animator.SetBool("Half-Damage state", false);
                     pointsAdded = 50;
+                    gc.messageText.text = ("+50");
                     gc.UpdateScore(pointsAdded);
                     bumberHealth--;
-
                 }
                 else if (bumberHealth == 1) {
-                    //mrParticle.material = new Material(greenShatter);
-                    //bbParticle.Play();
                     animator.SetBool("25-Damage state", false);
                     animator.SetBool("Destroy", true);
                     pointsAdded = 10;
+                    gc.messageText.text = ("+10");
                     gc.UpdateScore(pointsAdded);
                     bumberHealth--;
-
                 }
             }
             else {
@@ -142,9 +129,15 @@ public class Bumber_Code : MonoBehaviour
 
         Destroy(particleScore, 3.5f);
     }
+
      void BumberLight()
     {
         lightSpawn = Instantiate(bumberLight, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(lightSpawn, 0.25f);
+    }
+
+    void timerMessage()
+    {
+
     }
 }

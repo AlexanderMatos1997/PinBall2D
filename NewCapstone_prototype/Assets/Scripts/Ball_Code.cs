@@ -46,20 +46,16 @@ public class Ball_Code : MonoBehaviour
                 gc.inPlay = false;
                 if(gc.lives > 0)
                 {
-                    WhenBallDestroyed();
+                    StartCoroutine(messageBallDestroyed());
                 }
             }
         }
-    }
-    public void WhenBallDestroyed()
-    {
-        StartCoroutine(messageBallDestroyed());
     }
 
     IEnumerator messageBallDestroyed()
     {
         gc.messageText.text = ("Ball Destroyed");
         yield return new WaitForSeconds(2);
-        gc.messageText.text = ("");
+        gc.messageText.text = (" ");
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - Bumper
   - BumberSpawn
   - ScoreLight
+  - Play
+  - Quit
+  - MainMenu
   layers:
   - Default
   - TransparentFX
