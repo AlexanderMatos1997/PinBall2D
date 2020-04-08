@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Button playButton = GameObject.FindGameObjectWithTag("Play").GetComponent<Button>();
+        //Button playButton = GameObject.FindGameObjectWithTag("Play").GetComponent<Button>();
         //playButton.onClick.AddListener(GameManager.)
     }
     void Awake()

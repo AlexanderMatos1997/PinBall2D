@@ -16,7 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] public Text messageText;
     [SerializeField] private int score;
     [SerializeField] public int lives = 3;
-    [SerializeField] private GameObject playAgainButton;
+    [SerializeField] private GameObject gameoverButton;
+    [SerializeField] private GameObject gameOverPanel;
 
     //[SerializeField] private GameObject gameOverPanel;
     public Text highScoreText;
@@ -33,8 +34,7 @@ public class GameController : MonoBehaviour
     public bool pbInScene;
     public bool multiBallIP;
 
-    public GameObject MainCamera;
-    public float CameraForce = 0.25f;
+    public GameObject ballFlash;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,8 @@ public class GameController : MonoBehaviour
         inPlay = false;
         pbInScene = false;
         gameOverBool = false;
-        playAgainButton.SetActive(false);
+        gameoverButton.SetActive(false);
+        gameOverPanel.SetActive(false);
 
 
         scoreText.text = "Score: " + score;
@@ -53,6 +54,21 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            PlayerPrefs.DeleteKey("HIGHSCORE");
+        }
+
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            ActivateMultiBall();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         if (!pbInScene)
         {
             //SpawnBumberPrefab();
@@ -90,11 +106,6 @@ public class GameController : MonoBehaviour
         livesText.text = "Lives: " + lives;
     }
 
-    public void UpdateMessage()
-    {
-
-    }
-
     void SpawnBall()
     {
         Instantiate(ballPrefab, ballSA.transform.position, ballSA.transform.rotation);
@@ -109,6 +120,7 @@ public class GameController : MonoBehaviour
 
     public void ActivateMultiBall()
     {
+        messageText.text = ("Multi-Ball!");
         if(!multiBallIP)
         {
             StartCoroutine(MultiBallSpawn());
@@ -117,9 +129,15 @@ public class GameController : MonoBehaviour
 
     IEnumerator MultiBallSpawn()
     {
+        GameObject multiSFX;
+
         Instantiate(ballPrefab, MultiBallSP.transform.position, MultiBallSP.transform.rotation);
+        multiSFX = Instantiate(ballFlash, MultiBallSP.transform.position, gameObject.transform.rotation);
+        Destroy(multiSFX, 0.25f);
         yield return new WaitForSeconds(2);
         Instantiate(ballPrefab, MultiBallSP.transform.position, MultiBallSP.transform.rotation);
+        multiSFX = Instantiate(ballFlash, MultiBallSP.transform.position, gameObject.transform.rotation);
+        Destroy(multiSFX, 0.25f);
     }
 
     void BumperRandom()
@@ -131,7 +149,8 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        playAgainButton.SetActive(true);
+        gameOverPanel.SetActive(true);
+        gameoverButton.SetActive(true);
         gameOverBool = true;
 
         int highScore = PlayerPrefs.GetInt("HIGHSCORE");
