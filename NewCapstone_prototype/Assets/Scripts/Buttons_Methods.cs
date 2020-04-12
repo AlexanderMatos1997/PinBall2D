@@ -9,6 +9,7 @@ public class Buttons_Methods : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        FindObjectOfType<AudioManager>().Play("");
     }
 
     public void StartGame()

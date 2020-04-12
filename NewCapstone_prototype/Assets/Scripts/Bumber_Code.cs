@@ -12,7 +12,7 @@ public class Bumber_Code : MonoBehaviour
     Material[] shatterParticle;
 
     //public int points;
-    private float bumberForce = 12.5f;
+    private float bumberForce = 15.5f;
     private byte bumberHealth = 3;
     public GameObject bumberShatter;
     public GameObject particleScore;

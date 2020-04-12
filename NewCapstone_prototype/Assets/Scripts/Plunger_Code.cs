@@ -19,6 +19,7 @@ public class Plunger_Code : MonoBehaviour
     AudioSource plungerAudio;
     public AudioClip plungerPowerUp;
     public AudioClip launchAudio;
+    private bool playOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -53,11 +54,7 @@ public class Plunger_Code : MonoBehaviour
         if (!gameController.gameOverBool)
         {
             if (Input.GetKey(KeyCode.Space))
-            {
-                /*
-                plungerAudio.clip = plungerPowerUp;
-                plungerAudio.Play();*/
-
+            {     
                 if (power <= maxPower)
                 {
                     power += shootValue * Time.deltaTime;

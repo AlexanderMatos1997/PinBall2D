@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject[] bumperRandomizer;
     int randomInteger;
 
+  
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
     [SerializeField] public Text messageText;

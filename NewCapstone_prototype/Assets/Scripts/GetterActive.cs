@@ -11,6 +11,7 @@ public class GetterActive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         a = GameObject.FindGameObjectsWithTag("ScoreLight");
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //gc = GameObject.FindGameObjectWithTag("")

@@ -59,7 +59,7 @@ public class Slingshot_Function : MonoBehaviour
 
     void SlingShot()
     {
-        instantLE = Instantiate(lightEffect, gameObject.transform.position, gameObject.transform.rotation);
+        instantLE = Instantiate(lightEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(instantLE, 0.45f);
     }
 }
