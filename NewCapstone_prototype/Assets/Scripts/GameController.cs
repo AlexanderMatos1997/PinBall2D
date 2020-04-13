@@ -166,9 +166,4 @@ public class GameController : MonoBehaviour
             messageText.text = "HighScore is currently: " + highScore + "\n" + "Your score was " + score;
         }
     }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("MainGame");
-    }
 }
