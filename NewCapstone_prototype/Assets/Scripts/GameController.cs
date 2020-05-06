@@ -55,21 +55,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
-        {
-            PlayerPrefs.DeleteKey("HIGHSCORE");
-        }
-
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            ActivateMultiBall();
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-
         if (!pbInScene)
         {
             //SpawnBumberPrefab();
